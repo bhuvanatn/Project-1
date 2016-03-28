@@ -1,0 +1,33 @@
+<%= form_for @user do |u| %>
+  <fieldset>
+    <%= u.label :firstname %>
+    <%= u.text_field :firstname %>
+  </fieldset>
+  <fieldset>
+    <%= u.label :lastname %>
+    <%= u.text_field :lastname %>
+  </fieldset>
+  <fieldset>
+    <%= u.label :address %>
+    <%= u.text_field :address %>
+  </fieldset>
+  <fieldset>
+    <%= u.label :subrub %>
+    <%= u.text_field :subrub %>
+  </fieldset>
+  <fieldset>
+    <%= u.label :postcode %>
+    <%= u.text_field :postcode %>
+  </fieldset>
+  <fieldset>
+    <%= u.label :phone %>
+    <%= u.text_field :phone %>
+  </fieldset>
+  <fieldset>
+    <%= u.label :email %>
+    <%= u.text_field :email %>
+  </fieldset>
+  <fieldset>
+    <%= u.submit %>
+  </fieldset>
+<% end %>

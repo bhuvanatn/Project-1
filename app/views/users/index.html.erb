@@ -1,0 +1,4 @@
+<h1>All Users </h1>
+<% @user.each do |usr| %>
+<li><%= link_to(usr.firstname, usr) %></li>
+<% end %>
