@@ -1,2 +1,50 @@
-<h1>New User</h1>
-<%= render :partial => 'form' %>
+<h3>Sign up</h3>
+
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+<fieldset>
+<%= form_for @user do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email, :required => true %>
+</fieldset>
+<fieldset>
+  <%= f.label :password %>
+  <%= f.password_field :password, :required => true %>
+</fieldset>
+<fieldset>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, :required => true %>
+</fieldset>
+  <fieldset>
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :subrub %>
+    <%= f.text_field :subrub %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :postcode %>
+    <%= f.text_field :postcode %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </fieldset>
+<p>
+  <%= f.submit "Signup" %>
+</p>
+<% end %>

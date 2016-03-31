@@ -1,4 +1,10 @@
-<h1>All Users </h1>
-<% @user.each do |usr| %>
-<li><%= link_to(usr.firstname, usr) %></li>
+<h3>All Users </h3>
+
+<% @users.each do |usr| %>
+<p>
+    <li class = "allusers">
+        <%= usr.firstname  %>
+        <%= usr.lastname  %>
+    </li>
+</p>
 <% end %>

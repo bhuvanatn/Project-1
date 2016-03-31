@@ -1,3 +1,49 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.allusers{
+  margin-left: 100px;
+  font-size: 20px;
+
+}
+.mynavbar{
+  margin-top: 10px;
+  margin-left: 200px;
+}
+.login{
+  margin-left: 500px;
+}
+body{
+  background-color: lightblue;
+}
+h3{
+  margin-left: 400px;
+}
+h1 {
+  margin-left: 200px;
+}
+ul {
+  list-style: none;
+}
+
+fieldset {
+    font-size: 15px;
+  border: none;
+  border-radius: 0.2em;
+  margin-left: 400px;
+  margin-bottom: 10px;
+}
+p{
+  margin-left: 400px;
+  margin-top: 15px;
+  font-size: 15px;
+
+}
+
+label {
+  display: inline-block;
+  min-width: 85px;
+  text-align: right;
+}

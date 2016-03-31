@@ -8,10 +8,21 @@ u2 = User.create :firstname =>'Ramya', :lastname => 'Kumari', :address => 'Wasin
 
 Donation.destroy_all
 
-d1 = Donation.create :donationtype => 'Community Welfare Fund'
-d2 = Donation.create :donationtype => 'Building Fund'
-d3 = Donation.create :donationtype => 'General'
+d1 = Donation.create :amount => 1
+d2 = Donation.create :amount => 2
+d3 = Donation.create :amount => 3
 
-DonationUser.destroy_all
-du1 = DonationUser.create :amount => '300'
-du2 = DonationUser.create :amount => '200'
+Category.destroy_all
+
+c1 = Category.create :categorytype=> 'Community Welfare Fund'
+c1 = Category.create :categorytype=> 'Building Fund'
+c1 = Category.create :categorytype=> 'Benevolent Fund'
+c1 = Category.create :categorytype=> 'Sponsor a Brick'
+c1 = Category.create :categorytype=> 'General'
+
+u1.donations << d1
+u2.donations << d2 << d3
+
+d1.categories << c1
+d2.categories << c2
+d3.categories << c3

@@ -1,0 +1,12 @@
+<%= form_for @categories do |c| %>
+
+  <fieldset>
+    <%= c.label :Category %>
+    <%= c.text_field :categorytype %>
+  </fieldset>
+
+  <fieldset>
+    <%= c.submit %>
+  </fieldset>
+
+  <% end %>

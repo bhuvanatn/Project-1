@@ -1,3 +1,5 @@
-class UsersController < ApplicationController
-  
+class PagesController < ApplicationController
+  def welcome
+
+  end
 end

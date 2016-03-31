@@ -1,0 +1,10 @@
+<h1>Donations#edit</h1>
+<%= form_for @donation do |d| %>
+    <fieldset>
+      <%= d.label :amount %>
+      <%= d.text_field :amount %>
+<p>
+      <%= d.submit %>
+  </p>
+    </fieldset>
+<% end %>

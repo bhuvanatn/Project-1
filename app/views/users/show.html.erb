@@ -1,2 +1,10 @@
 <h1>Show Users</h1>
-<%= link_to 'Edit User', edit_user_path(@user) %>
+<p>
+    <%= @user.firstname %>
+    <%= @user.lastname %>
+    <%= @user.address %>
+</p>
+    <p>
+    <%= link_to 'Edit User', edit_user_path(@user) %>
+    <%= link_to 'Delete User', @user, :method => :delete %>
+</p>

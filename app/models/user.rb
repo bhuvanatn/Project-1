@@ -15,5 +15,12 @@
 #
 
 class User < ActiveRecord::Base
+  has_secure_password
+  validates :email, :presence => true, :uniqueness => true
   has_many :donations
 end
+
+# u = User.first
+# u.donations
+# d = Donation.first
+# u.donations << d
