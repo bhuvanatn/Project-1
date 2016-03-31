@@ -1,1 +1,19 @@
-<h1>Welcome </h1>
+<% if @current_user.present? %>
+    <% if @current_user.firstname.present? %>
+        <h1>Welcome <%= @current_user.firstname %></h1>
+    <% else %>
+      <h1>Welcome  <%= @current_user.email %></h1>
+    <% end %>
+<%else %>
+    <!-- <h2>Please Sign Up </h2> -->
+<% end %>
+
+<p class="textindent">
+<% if @current_user.present? %>
+  <% if @current_user.admin? %>
+    <%= link_to "All users", users_path %> <br>
+    <%= link_to "Donations", donations_list_path %> <br>
+    <%= link_to "Categories", categories_path %> <br>
+  <% end %>
+<% end %>
+</p>

@@ -1,18 +1,23 @@
-<h3>Make a Donation</h3>
+<div class="textindent">Make a Donation</div>
+
+<div class="towelcomeuser">
+<% if @current_user.firstname.present? %>
+  Welcome <%= @current_user.firstname %>
+<% else %>
+    Welcome  <%= @current_user.email %>
+<% end %>
+</div>
 <%= form_for @donation do |d| %>
     <fieldset>
         <%= collection_check_boxes(:donation, :category_ids, Category.all, :id, :categorytype) do |b| %>
-
                 <%= b.check_box %>
                 <%= b.label %>
-<br>
+                <br>
         <% end %>
-</fieldset>
-<p>
-        <%= d.label :amount %>
+    </fieldset>
+    <fieldset>
+       <%= d.label :amount %>
         <%= d.text_field :amount %>
-
         <%= d.submit "Donate" %>
-
-</p>
+    </fieldset>
 <% end %>

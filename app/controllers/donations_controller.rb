@@ -1,9 +1,10 @@
 class DonationsController < ApplicationController
   def index
     # @donations = Donation.all
-    puts "Thank you for making donation."
   end
-
+  def donationlist
+    @categories = Category.all
+  end
   def create
     @donation = Donation.new donations_params
     if @donation.save

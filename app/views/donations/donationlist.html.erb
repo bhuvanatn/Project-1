@@ -1,0 +1,8 @@
+<h3>Donations</h3>
+<br>
+<% @categories.each do |c| %>
+
+  <p class="textindent">
+  <%= c.categorytype %>: <%= c.total %> <br>
+</p>
+<% end %>

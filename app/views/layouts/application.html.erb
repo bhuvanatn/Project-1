@@ -7,14 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default" class="nav navbar-nav" >
+<nav class="navbar navbar-default" class="logo" >
 <div class="mynavbar">
   <%= link_to 'Home', root_path %> |
   <% if @current_user.present? %>
-    <% if @current_user.admin? %>
+    <!-- <% if @current_user.admin? %>
       <%= link_to "All users", users_path %> |
+      <%= link_to "Donations", donations_list_path %> |
       <%= link_to "Categories", categories_path %> |
-    <% end %>
+    <% end %> -->
     <%= link_to "Edit profile", users_edit_path %> |
     <%= link_to "Make A Donation",new_donation_path %> |
     <%= link_to "Logout #{ @current_user.email }", login_path, :method => :delete %>
@@ -22,6 +23,9 @@
     <%= link_to "Sign up", signup_path %> |
     <%= link_to "Login", login_path %>
   <% end %>
+  <div class="logo">
+  Charity Donation System
+  </div>
 </div>
 </nav>
 

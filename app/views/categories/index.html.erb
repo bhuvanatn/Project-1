@@ -1,14 +1,14 @@
-<h1>All Categories</h1>
-
+<h3> Categories</h3>
+<br>
 <% @categories.each do |cat| %>
 
-    <fieldset>
+    <p class="textindent">
       <%= cat.categorytype %>
       <%= link_to 'Edit', edit_category_path(cat) %>
      <%= link_to 'Delete', cat, :method => :delete %>
-    </fieldset>
+    <p>
 <% end %>
 <br>
-<fieldset>
+<p class="textindent">
 <%= link_to 'Create New Category', new_category_path %>
-</fieldset>
+</p>
