@@ -15,10 +15,10 @@ d3 = Donation.create :amount => 3
 Category.destroy_all
 
 c1 = Category.create :categorytype=> 'Community Welfare Fund'
-c1 = Category.create :categorytype=> 'Building Fund'
-c1 = Category.create :categorytype=> 'Benevolent Fund'
-c1 = Category.create :categorytype=> 'Sponsor a Brick'
-c1 = Category.create :categorytype=> 'General'
+c2 = Category.create :categorytype=> 'Building Fund'
+c3 = Category.create :categorytype=> 'Benevolent Fund'
+c4 = Category.create :categorytype=> 'Sponsor a Brick'
+c5 = Category.create :categorytype=> 'General'
 
 u1.donations << d1
 u2.donations << d2 << d3
