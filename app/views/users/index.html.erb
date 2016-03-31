@@ -2,9 +2,12 @@
 
 <% @users.each do |usr| %>
 <p>
-    <li class = "allusers">
-        <%= usr.firstname  %>
-        <%= usr.lastname  %>
+    <li class="allusers">
+        <%= usr.email %> |
+        <%= usr.firstname %>
+        <%= usr.lastname  %>|
+        
     </li>
 </p>
+
 <% end %>
