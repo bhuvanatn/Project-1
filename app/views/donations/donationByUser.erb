@@ -1,0 +1,17 @@
+<h2>Donation By User</h2>
+<br>
+<p>
+<% @user.each do |usr|  %>
+<p class="col-md-offset-2 myfont">
+<%= usr.email %> |
+<%= usr.firstname %>
+<%= usr.lastname  %>|
+   <% total = 0 %>
+   <% usr.donations.each do |ud| %>
+      <% ud.amount == nil ? amount = 0 : amount = ud.amount %>
+      <% total += amount %>
+   <% end %>
+   <%= total %> <br>
+</p>
+<%end %>
+</p>

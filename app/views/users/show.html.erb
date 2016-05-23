@@ -1,10 +1,30 @@
-<h1>Show Users</h1>
-<p>
-    <%= @user.firstname %>
-    <%= @user.lastname %>
-    <%= @user.address %>
-</p>
-    <p>
-    <%= link_to 'Edit User', edit_user_path(@user) %>
-    <%= link_to 'Delete User', @user, :method => :delete %>
-</p>
+<h2>Show Users</h2>
+<br>
+<div class="col-md-4 col-md-offset-0">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <td>Category</td>
+        <td>Amount</td>
+        <td>Date</td>
+      </tr>
+        <% @user_donations.each do |d| %>
+        <tr>
+          <td>
+            <% d.categories.each do |c|  %>
+              <%= c.categorytype %>
+            <% end %>
+          </td>
+          <td>
+            <%= d.amount %>
+          </td>
+          <td>
+            <%= d.created_at.to_date %>
+          </td>
+        </tr>
+    <%end %>
+</div>
+
+<!-- [#<Donation id: 67, amount: 90.0, user_id: 18, created_at: "2016-03-31 10:48:29", updated_at: "2016-03-31 10:48:29”>,
+  #<Donation id: 80, amount: 10.0, user_id: 18, created_at: "2016-04-29 17:10:17", updated_at: "2016-04-29 17:10:17”>,
+  #<Donation id: 81, amount: 25.0, user_id: 18, created_at: "2016-04-29 17:10:46", updated_at: "2016-04-29 17:10:46">,
+ #<Donation id: 82, amount: 50.0, user_id: 18, created_at: "2016-04-29 17:11:22", updated_at: "2016-04-29 17:11:22”>, -->

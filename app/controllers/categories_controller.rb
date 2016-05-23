@@ -18,7 +18,6 @@ class CategoriesController < ApplicationController
       @categories = Category.find params[:id]
   end
   def update
-    raise "hell"
     category = Category.find params[:id]
     category.update category_params
     redirect_to categories_path

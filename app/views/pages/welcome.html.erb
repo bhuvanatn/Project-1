@@ -1,19 +1,27 @@
-<% if @current_user.present? %>
-    <% if @current_user.firstname.present? %>
-        <h1>Welcome <%= @current_user.firstname %></h1>
-    <% else %>
-      <h1>Welcome  <%= @current_user.email %></h1>
-    <% end %>
-<%else %>
-    <!-- <h2>Please Sign Up </h2> -->
-<% end %>
+<div class="col-md-4 col-md-offset-8 myfont">
 
-<p class="textindent">
 <% if @current_user.present? %>
-  <% if @current_user.admin? %>
-    <%= link_to "All users", users_path %> <br>
-    <%= link_to "Donations", donations_list_path %> <br>
-    <%= link_to "Categories", categories_path %> <br>
-  <% end %>
+<% if @current_user.firstname.present? %>
+        Welcome <%= @current_user.firstname %>
+    <% else %>
+        Welcome <%= @current_user.email %>
 <% end %>
-</p>
+<%else %>
+<% end %>
+</div>
+
+<div class="col-md-4 col-md-offset-2 myfont">
+
+    <% if @current_user.present? %>
+    <% if @current_user.admin? %>
+    <%= link_to "All users", users_path %>
+    <br>
+    <%= link_to "All Donations By Categories", donationByCategories_donations_path %>
+    <br>
+    <%= link_to "All Donations By User", donationByUser_donations_path	 %>
+    <br>
+    <%= link_to "Create Categories", categories_path %>
+    <br>
+    <% end %>
+    <% end %>
+</div>

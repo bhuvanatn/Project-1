@@ -1,8 +1,7 @@
-<h3>Donations</h3>
+<h3>Donations By Categories</h3>
 <br>
 <% @categories.each do |c| %>
-
-  <p class="textindent">
+  <p class="col-md-offset-2 myfont">
   <%= c.categorytype %>: <%= c.total %> <br>
-</p>
+  </p>
 <% end %>

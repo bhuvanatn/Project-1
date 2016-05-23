@@ -2,8 +2,11 @@ class DonationsController < ApplicationController
   def index
     # @donations = Donation.all
   end
-  def donationlist
+  def donationByCategories
     @categories = Category.all
+  end
+  def donationByUser
+    @user = User.all
   end
   def create
     @donation = Donation.new donations_params
@@ -21,7 +24,6 @@ class DonationsController < ApplicationController
       @donation = Donation.find params[:id]
   end
   def update
-
     donation = Donation.find params[:id]
     donation.update donations_params
     redirect_to donations_path

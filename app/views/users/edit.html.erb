@@ -1,44 +1,45 @@
 <h3>Edit</h3>
 
-
-<%= form_for @user do |f| %>
-<fieldset>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-</fieldset>
-<fieldset>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-</fieldset>
-<fieldset>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-</fieldset>
-  <fieldset>
-    <%= f.label :firstname %>
-    <%= f.text_field :firstname %>
-  </fieldset>
-  <fieldset>
-    <%= f.label :lastname %>
-    <%= f.text_field :lastname %>
-  </fieldset>
-  <fieldset>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </fieldset>
-  <fieldset>
-    <%= f.label :subrub %>
-    <%= f.text_field :subrub %>
-  </fieldset>
-  <fieldset>
-    <%= f.label :postcode %>
-    <%= f.text_field :postcode %>
-  </fieldset>
-  <fieldset>
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </fieldset>
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
+<div class="col-md-4 col-md-offset-2">
+    <%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
+    <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :firstname %>
+        <%= f.text_field :firstname, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :lastname %>
+        <%= f.text_field :lastname, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :subrub %>
+        <%= f.text_field :subrub, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :postcode %>
+        <%= f.text_field :postcode, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.submit class: 'btn btn-default' %>
+    </div>
+    <% end %>
+</div>

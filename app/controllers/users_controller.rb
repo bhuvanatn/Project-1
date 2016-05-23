@@ -19,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = @current_user
+    @user = User.find(params[:id])
+    @user_donations = Donation.where(:user_id => @user.id)
   end
 
   def edit
@@ -37,12 +38,12 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-private
-def user_params
-  params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname, :address, :subrub, :postcode, :phone)
-end
+  private
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname, :address, :subrub, :postcode, :phone)
+  end
 
-def authorise
-  redirect_to root_path unless (@current_user.present? && @current_user.admin?)
-end
+  def authorise
+    redirect_to root_path unless (@current_user.present? && @current_user.admin?)
+  end
 end

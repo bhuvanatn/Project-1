@@ -1,23 +1,27 @@
-<div class="textindent">Make a Donation</div>
-
-<div class="towelcomeuser">
+<h2>Make a Donation</h2>
+<div class="col-md-4 col-md-offset-8 myfont">
 <% if @current_user.firstname.present? %>
-  Welcome <%= @current_user.firstname %>
+Welcome
+<%= @current_user.firstname %>
 <% else %>
-    Welcome  <%= @current_user.email %>
+Welcome
+<%= @current_user.email%>
 <% end %>
 </div>
-<%= form_for @donation do |d| %>
-    <fieldset>
+<div class="col-md-4 col-md-offset-2">
+    <%= form_for @donation, :html => {:class => "form-horizontal center"} do |d| %>
         <%= collection_check_boxes(:donation, :category_ids, Category.all, :id, :categorytype) do |b| %>
-                <%= b.check_box %>
-                <%= b.label %>
-                <br>
-        <% end %>
-    </fieldset>
-    <fieldset>
-       <%= d.label :amount %>
-        <%= d.text_field :amount %>
-        <%= d.submit "Donate" %>
-    </fieldset>
-<% end %>
+            <%= b.check_box  %>
+            <%= b.label :class => "labelClass"%>
+        <br>
+    <% end %>
+    <br>
+    <div class="form-group">
+        <%= d.label :amount %>
+        <%= d.text_field :amount, :required => true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= d.submit "Donate", class: 'btn btn-default' %>
+    </div>
+    <% end %>
+</div>

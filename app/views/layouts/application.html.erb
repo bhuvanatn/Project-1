@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cds</title>
+  <title>CDS</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default" class="logo" >
-<div class="mynavbar">
-  <%= link_to 'Home', root_path %> |
-  <% if @current_user.present? %>
-    <!-- <% if @current_user.admin? %>
-      <%= link_to "All users", users_path %> |
-      <%= link_to "Donations", donations_list_path %> |
-      <%= link_to "Categories", categories_path %> |
-    <% end %> -->
-    <%= link_to "Edit profile", users_edit_path %> |
-    <%= link_to "Make A Donation",new_donation_path %> |
-    <%= link_to "Logout #{ @current_user.email }", login_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign up", signup_path %> |
-    <%= link_to "Login", login_path %>
-  <% end %>
-  <div class="logo">
-  Charity Donation System
-  </div>
-</div>
-</nav>
-
+      <div class="container">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">CDS</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li> <%= link_to 'Home', root_path, class: "active" %> </li>
+                  <% if @current_user.present? %>
+                <li><%= link_to "Edit profile", edit_user_path(@current_user) %> </li>
+                <li><%= link_to "Make A Donation",new_donation_path %> </li>
+                <li> <%= link_to "ShowMyDonation",user_path(@current_user) %>   </li>
+                <li> <%= link_to "Logout #{ @current_user.email }", login_path, :method => :delete %></li>
+                <% else %>
+                  <li>  <%= link_to "Sign up", signup_path %> </li>
+                  <li> <%= link_to "Login", login_path %> </li>
+                <% end %>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li> <a href="./">CDS</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!--/.container-fluid -->
+        </nav>
 <% if flash[:error].present? %>
   <h2 class="error">
     <%= flash[:error] %>
