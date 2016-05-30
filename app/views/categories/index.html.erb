@@ -1,14 +1,14 @@
-<h3> Categories</h3>
+<h3>
+    Categories</h3>
 <br>
 <% @categories.each do |cat| %>
-
-    <p class="textindent">
-      <%= cat.categorytype %>
-      <%= link_to 'Edit', edit_category_path(cat) %>
-     <%= link_to 'Delete', cat, :method => :delete %>
+    <p class="col-md-offset-2 myfont">
+        <%= cat.categorytype %>
+        <%= link_to 'Edit', edit_category_path(cat) %>
+        <%= link_to 'Delete', cat, :method => :delete %>
     <p>
 <% end %>
-<br>
-<p class="textindent">
-<%= link_to 'Create New Category', new_category_path %>
+
+<p class="col-md-offset-2 myfont">
+    <%= link_to 'Create New Category', new_category_path %>
 </p>
